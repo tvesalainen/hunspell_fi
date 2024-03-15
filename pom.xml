@@ -4,7 +4,7 @@
     <groupId>org.vesalainen.dict.hunspell</groupId>
     <artifactId>hunspell_fi</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <packaging>jar</packaging> 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
