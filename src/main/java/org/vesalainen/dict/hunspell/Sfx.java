@@ -111,10 +111,6 @@ public class  Sfx implements Comparable<Sfx>
 
     public void print(PrintWriter pw)
     {
-        if (inflection == 52)
-        {
-            System.err.println();
-        }
         pw.print("# ");
         pw.println(this);
         List<TaivutusTyyppi> list = taivutusTyyppi.get(inflection);
@@ -152,7 +148,7 @@ public class  Sfx implements Comparable<Sfx>
                 throw new RuntimeException(nom+" didn't have inflection "+this);
             }
         }
-        pw.format("SFX %c N %d\n", flag, set.size());
+        pw.format("SFX %c Y %d\n", flag, set.size());
         set.forEach((s)->pw.println(s));
     }
     private static String suffix(String nom, String taiv)

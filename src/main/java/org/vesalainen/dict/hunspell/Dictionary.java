@@ -24,10 +24,16 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.NavigableMap;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import org.vesalainen.parser.GenClassFactory;
 import static org.vesalainen.parser.ParserFeature.UseDirectBuffer;
 import static org.vesalainen.parser.ParserFeature.WideIndex;
@@ -38,6 +44,8 @@ import org.vesalainen.parser.annotation.Rule;
 import org.vesalainen.parser.annotation.Rules;
 import org.vesalainen.parser.annotation.Terminal;
 import org.vesalainen.parser.util.AbstractParser;
+import org.vesalainen.util.HashMapSet;
+import org.vesalainen.util.MapSet;
 
 /**
  *
@@ -51,9 +59,11 @@ import org.vesalainen.parser.util.AbstractParser;
 })
 public abstract class Dictionary extends AbstractParser
 {
-    private Map<String,Word> map = new TreeMap<>();
+    private NavigableMap<String,Word> map = new TreeMap<>();
     private NavigableMap<String,Word> reverseMap = new TreeMap<>();
     private List<Word> reverseList = new ArrayList<>();
+    private Set<String> prefixes = new TreeSet<>();
+    private Set<String> suffixes = new HashSet<>();
     
     public void createFiles(Path dir) throws IOException
     {
@@ -76,6 +86,7 @@ public abstract class Dictionary extends AbstractParser
         }
         reverseMap = null;
         reverseList = null;
+        processPrefixes();
         Path dic = dir.resolve("fi_FI.dic");
         try (BufferedWriter dicWriter = Files.newBufferedWriter(dic, UTF_8);
             PrintWriter pw = new PrintWriter(dicWriter);)
@@ -96,10 +107,74 @@ public abstract class Dictionary extends AbstractParser
             apw.println("FLAG UTF-8");
             apw.println("KEY qwertyuiopå|asdfghjklöä|zxcvbnm");
             apw.println();
+            Pfx.getPrefixes().forEach((p)->p.print(apw));
+            apw.println();
             allInflections.forEach((inf)->inf.print(apw));
         }
     }
-    
+    private void processPrefixes()
+    {
+        MapSet<String,String> sfxMap = new HashMapSet<>();
+        prefixes.forEach((pfx)->
+        {
+            int len = pfx.length();
+            NavigableMap<String, Word> tailMap = map.tailMap(pfx, false);
+            for (Entry<String, Word> e : tailMap.entrySet())
+            {
+                String word = e.getKey();
+                if (!word.startsWith(pfx))
+                {
+                    break;
+                }
+                String suf = word.substring(len);
+                sfxMap.add(suf, pfx);
+            }
+        });
+        for (Entry<String,Set<String>> e : sfxMap.entrySet())
+        {
+            String base = e.getKey();
+            Set<String> set = e.getValue();
+            if (set.size() > 1)
+            {
+                boolean sameType = true;
+                Word newWord = null;
+                for (String prf : set)
+                {
+                    String w = prf+base;
+                    Word word = map.get(w);
+                    if (word == null)
+                    {
+                        sameType = false;
+                        break;
+                    }
+                    if (newWord == null)
+                    {
+                        newWord = word.copy(base);
+                    }
+                    else
+                    {
+                        if (!word.typeEquals(newWord))
+                        {
+                            sameType = false;
+                            break;
+                        }
+                    }
+                }
+                if (sameType)
+                {
+                    for (String prf : set)
+                    {
+                        String w = prf+base;
+                        map.remove(w);
+                        System.err.println("remove "+w);
+                    }
+                    Pfx pfx = Pfx.getInstance(set);
+                    newWord.setPfx(pfx);
+                    map.put(base, newWord);
+                }
+            }
+        }
+    }
     @Rule("word lf")
     protected void line(String word)
     {
@@ -125,7 +200,14 @@ public abstract class Dictionary extends AbstractParser
         }
         else
         {
-            System.err.println(word);
+            if (word.startsWith("-"))
+            {
+                suffixes.add(word.substring(1));
+            }
+            else
+            {
+                prefixes.add(word.substring(0, word.length()-1));
+            }
         }
     }
     private static String reverse(String str)

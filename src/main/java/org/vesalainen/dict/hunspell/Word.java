@@ -18,6 +18,8 @@ package org.vesalainen.dict.hunspell;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  *
@@ -29,6 +31,7 @@ public class Word
     private int homonym;
     private WordClass[] classes;
     private Sfx[] inflections;
+    private Pfx pfx;
 
     public Word(String word, Integer homonym, List<WordClass> classes, List<Sfx> inflections)
     {
@@ -47,9 +50,26 @@ public class Word
         }
     }
 
+    public Word(String word, int homonym, WordClass[] classes, Sfx[] inflections)
+    {
+        this.word = word;
+        this.homonym = homonym;
+        this.classes = classes;
+        this.inflections = inflections;
+    }
+
+    public Word copy(String newWord)
+    {
+        return new Word(newWord, homonym, classes, inflections);
+    }
     public void setInflections(Sfx[] inflections)
     {
         this.inflections = inflections;
+    }
+
+    public void setPfx(Pfx pfx)
+    {
+        this.pfx = pfx;
     }
 
     public String getWord()
@@ -75,7 +95,7 @@ public class Word
     @Override
     public String toString()
     {
-        if (inflections == null || inflections.length == 0)
+        if (pfx == null && (inflections == null || inflections.length == 0))
         {
             return word;
         }
@@ -84,12 +104,49 @@ public class Word
             StringBuilder sb = new StringBuilder();
             sb.append(word);
             sb.append('/');
-            for (Sfx ii : inflections)
+            if (pfx != null)
             {
-                sb.append(ii.getFlag());
+                sb.append(pfx.getFlag());
+            }
+            if (inflections != null)
+            {
+                for (Sfx ii : inflections)
+                {
+                    sb.append(ii.getFlag());
+                }
             }
             return sb.toString();
         }
     }
-    
+
+    public boolean typeEquals(Word oth)
+    {
+        if (this == oth)
+        {
+            return true;
+        }
+        if (oth == null)
+        {
+            return false;
+        }
+        if (getClass() != oth.getClass())
+        {
+            return false;
+        }
+        final Word other = (Word) oth;
+        if (this.homonym != other.homonym)
+        {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.classes, other.classes))
+        {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.inflections, other.inflections))
+        {
+            return false;
+        }
+        return true;
+    }
+
 }
