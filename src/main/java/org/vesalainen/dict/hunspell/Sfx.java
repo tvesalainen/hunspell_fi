@@ -49,7 +49,7 @@ public class  Sfx implements Comparable<Sfx>
     private char grade;
     private char flag;
     protected AsteVaihtelu asteVaihtelu;
-    private Set<String> words = new HashSet<>();
+    private Set<Sana> words = new HashSet<>();
 
     static
     {
@@ -115,7 +115,7 @@ public class  Sfx implements Comparable<Sfx>
         pw.println(this);
         List<TaivutusTyyppi> list = taivutusTyyppi.get(inflection);
         Set<S> set = new TreeSet<>();
-        for (String nom : words)
+        for (Sana nom : words)
         {
             boolean hadIt = false;
             for (TaivutusTyyppi t : list)
@@ -130,9 +130,9 @@ public class  Sfx implements Comparable<Sfx>
                         default:
                             try
                             {
-                                String sana = asteVaihtelu.vaihtele(inflection, t.sija, nom);
+                                String sana = asteVaihtelu.vaihtele(inflection, t.sija, nom.toString());
                                 String taiv = t.taivuta(sana);
-                                set.add(new S(flag, nom, taiv, t));
+                                set.add(new S(flag, nom.toString(), taiv, t));
                             }
                             catch (Exception ex)
                             {
@@ -201,7 +201,7 @@ public class  Sfx implements Comparable<Sfx>
         return flag;
     }
 
-    public void addWord(String word)
+    public void addWord(Sana word)
     {
         words.add(word);
     }

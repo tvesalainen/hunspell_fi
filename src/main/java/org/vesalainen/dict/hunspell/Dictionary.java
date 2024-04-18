@@ -24,11 +24,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.Set;
@@ -59,11 +56,11 @@ import org.vesalainen.util.MapSet;
 })
 public abstract class Dictionary extends AbstractParser
 {
-    private NavigableMap<String,Word> map = new TreeMap<>();
-    private NavigableMap<String,Word> reverseMap = new TreeMap<>();
-    private List<Word> reverseList = new ArrayList<>();
-    private Set<String> prefixes = new TreeSet<>();
-    private Set<String> suffixes = new HashSet<>();
+    private NavigableMap<Sana,WordEntry> map = new TreeMap<>();
+    private NavigableMap<String,WordEntry> reverseMap = new TreeMap<>();
+    private List<WordEntry> reverseList = new ArrayList<>();
+    private Set<Sana> prefixes = new TreeSet<>();
+    private Set<Sana> suffixes = new HashSet<>();
     
     public void createFiles(Path dir) throws IOException
     {
@@ -72,13 +69,13 @@ public abstract class Dictionary extends AbstractParser
         url = ClassLoader.getSystemResource("nykysuomensanalista2022.csv");
         parse(url);
         reverseList.sort((k1,k2)->{return k2.getWord().length()-k1.getWord().length();});
-        for (Word word : reverseList)
+        for (WordEntry word : reverseList)
         {
-            String reverse = reverse(word.getWord());
+            String reverse = reverse(word.getWord().toString());
             String key = reverseMap.higherKey(reverse);
             while (key != null && key.startsWith(reverse))
             {
-                Word wrd = reverseMap.get(key);
+                WordEntry wrd = reverseMap.get(key);
                 wrd.setInflections(word.getInflections());
                 reverseMap.remove(key);
                 key = reverseMap.higherKey(key);
@@ -114,34 +111,34 @@ public abstract class Dictionary extends AbstractParser
     }
     private void processPrefixes()
     {
-        MapSet<String,String> sfxMap = new HashMapSet<>();
+        MapSet<Sana,Sana> sfxMap = new HashMapSet<>();
         prefixes.forEach((pfx)->
         {
             int len = pfx.length();
-            NavigableMap<String, Word> tailMap = map.tailMap(pfx, false);
-            for (Entry<String, Word> e : tailMap.entrySet())
+            NavigableMap<Sana, WordEntry> tailMap = map.tailMap(pfx, false);
+            for (Entry<Sana, WordEntry> e : tailMap.entrySet())
             {
-                String word = e.getKey();
+                Sana word = e.getKey();
                 if (!word.startsWith(pfx))
                 {
                     break;
                 }
-                String suf = word.substring(len);
+                Sana suf = word.substring(len);
                 sfxMap.add(suf, pfx);
             }
         });
-        for (Entry<String,Set<String>> e : sfxMap.entrySet())
+        for (Entry<Sana,Set<Sana>> e : sfxMap.entrySet())
         {
-            String base = e.getKey();
-            Set<String> set = e.getValue();
+            Sana base = e.getKey();
+            Set<Sana> set = e.getValue();
             if (set.size() > 1)
             {
                 boolean sameType = true;
-                Word newWord = null;
-                for (String prf : set)
+                WordEntry newWord = null;
+                for (Sana prf : set)
                 {
-                    String w = prf+base;
-                    Word word = map.get(w);
+                    Sana w = prf.concat(base);
+                    WordEntry word = map.get(w);
                     if (word == null)
                     {
                         sameType = false;
@@ -162,9 +159,9 @@ public abstract class Dictionary extends AbstractParser
                 }
                 if (sameType)
                 {
-                    for (String prf : set)
+                    for (Sana prf : set)
                     {
-                        String w = prf+base;
+                        Sana w = prf.concat(base);
                         map.remove(w);
                         System.err.println("remove "+w);
                     }
@@ -176,17 +173,17 @@ public abstract class Dictionary extends AbstractParser
         }
     }
     @Rule("word lf")
-    protected void line(String word)
+    protected void line(Sana word)
     {
-        Word w = new Word(word, null, null, null);
+        WordEntry w = new WordEntry(word, null, null, null);
         map.put(word, w);
     }
     @Rule("word '\t' homonym? '\t' wordClassList? '\t' inflectionList? lf")
-    protected void line(String word, Integer homonym, List<WordClass> classes, List<Sfx> inflections)
+    protected void line(Sana word, Integer homonym, List<WordClass> classes, List<Sfx> inflections)
     {
         if (!word.startsWith("-") && !word.endsWith("-"))
         {
-            Word w = new Word(word, homonym, classes, inflections);
+            WordEntry w = new WordEntry(word, homonym, classes, inflections);
             map.put(word, w);
             if (inflections != null)
             {
@@ -195,7 +192,7 @@ public abstract class Dictionary extends AbstractParser
             }
             else
             {
-                reverseMap.put(reverse(word), w);
+                reverseMap.put(reverse(word.toString()), w);
             }
         }
         else
@@ -267,10 +264,10 @@ public abstract class Dictionary extends AbstractParser
         return Sfx.getInstance(inflection, grade);
     }
     @Terminal(expression = "[^\t]+")
-    protected String word(String sana)
+    protected Sana word(String str)
     {
-        sana = sana.toLowerCase();
-        switch (sana)
+        Sana sana = new Sana(str.toLowerCase());
+        switch (sana.toString())
         {
             case "housut":
             case "torut":
@@ -290,23 +287,23 @@ public abstract class Dictionary extends AbstractParser
             case "mensut":
                 return sana.substring(0, sana.length()-1);
             case "terkut":
-                return "terkku";
+                return new Sana("terkku");
             case "farkut":
-                return "farkku";
+                return new Sana("farkku");
             case "menkut":
-                return "menkku";
+                return new Sana("menkku");
             case "reput":
-                return "reppu";
+                return new Sana("reppu");
             case "lemput":
-                return "lemppu";
+                return new Sana("lemppu");
             case "urut":
-                return "urku";
+                return new Sana("urku");
             case "pidot":
-                return "pito";
+                return new Sana("pito");
             case "käädyt":
-                return "kääty";
+                return new Sana("kääty");
             case "opinnot":
-                return "opinto";
+                return new Sana("opinto");
             default:
                 return sana;
         }

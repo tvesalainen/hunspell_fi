@@ -25,15 +25,15 @@ import java.util.Set;
  *
  * @author Timo Vesalainen <timo.vesalainen@iki.fi>
  */
-public class Word
+public class WordEntry
 {
-    private String word;
+    private Sana word;
     private int homonym;
     private WordClass[] classes;
     private Sfx[] inflections;
     private Pfx pfx;
 
-    public Word(String word, Integer homonym, List<WordClass> classes, List<Sfx> inflections)
+    public WordEntry(Sana word, Integer homonym, List<WordClass> classes, List<Sfx> inflections)
     {
         this.word = word;
         if (homonym != null)
@@ -50,7 +50,7 @@ public class Word
         }
     }
 
-    public Word(String word, int homonym, WordClass[] classes, Sfx[] inflections)
+    public WordEntry(Sana word, int homonym, WordClass[] classes, Sfx[] inflections)
     {
         this.word = word;
         this.homonym = homonym;
@@ -58,9 +58,9 @@ public class Word
         this.inflections = inflections;
     }
 
-    public Word copy(String newWord)
+    public WordEntry copy(Sana newWord)
     {
-        return new Word(newWord, homonym, classes, inflections);
+        return new WordEntry(newWord, homonym, classes, inflections);
     }
     public void setInflections(Sfx[] inflections)
     {
@@ -72,7 +72,7 @@ public class Word
         this.pfx = pfx;
     }
 
-    public String getWord()
+    public Sana getWord()
     {
         return word;
     }
@@ -97,7 +97,7 @@ public class Word
     {
         if (pfx == null && (inflections == null || inflections.length == 0))
         {
-            return word;
+            return word.toString();
         }
         else
         {
@@ -119,7 +119,7 @@ public class Word
         }
     }
 
-    public boolean typeEquals(Word oth)
+    public boolean typeEquals(WordEntry oth)
     {
         if (this == oth)
         {
@@ -133,7 +133,7 @@ public class Word
         {
             return false;
         }
-        final Word other = (Word) oth;
+        final WordEntry other = (WordEntry) oth;
         if (this.homonym != other.homonym)
         {
             return false;

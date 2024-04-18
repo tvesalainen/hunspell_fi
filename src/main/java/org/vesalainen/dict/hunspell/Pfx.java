@@ -31,12 +31,12 @@ import static org.vesalainen.dict.hunspell.Sfx.nextFlag;
  */
 public class Pfx
 {
-    private static final Map<Set<String>,Pfx> map = new HashMap<>();
+    private static final Map<Set<Sana>,Pfx> map = new HashMap<>();
 
     private char flag;
-    private Set<String> set;
+    private Set<Sana> set;
 
-    public static Pfx getInstance(Set<String> set)
+    public static Pfx getInstance(Set<Sana> set)
     {
         Pfx pfx = map.get(set);
         if (pfx == null)
@@ -57,7 +57,7 @@ public class Pfx
         return map.values();
     }
     
-    private Pfx(Set<String> prefixes)
+    private Pfx(Set<Sana> prefixes)
     {
         this.flag = nextFlag();
         this.set = prefixes;
