@@ -24,11 +24,14 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import org.vesalainen.parser.GenClassFactory;
@@ -60,7 +63,7 @@ public abstract class Dictionary extends AbstractParser
     private NavigableMap<String,WordEntry> reverseMap = new TreeMap<>();
     private List<WordEntry> reverseList = new ArrayList<>();
     private Set<Sana> prefixes = new TreeSet<>();
-    private Set<Sana> suffixes = new HashSet<>();
+    private Map<Sana,WordEntry> suffixes = new HashMap<>();
     
     public void createFiles(Path dir) throws IOException
     {
@@ -77,13 +80,12 @@ public abstract class Dictionary extends AbstractParser
             {
                 WordEntry wrd = reverseMap.get(key);
                 wrd.setInflections(word.getInflections());
-                reverseMap.remove(key);
                 key = reverseMap.higherKey(key);
             }
         }
-        reverseMap = null;
         reverseList = null;
         processPrefixes();
+        reverseMap = null;
         Path dic = dir.resolve("fi_FI.dic");
         try (BufferedWriter dicWriter = Files.newBufferedWriter(dic, UTF_8);
             PrintWriter pw = new PrintWriter(dicWriter);)
@@ -103,6 +105,7 @@ public abstract class Dictionary extends AbstractParser
             apw.println("SET UTF-8");
             apw.println("FLAG UTF-8");
             apw.println("KEY qwertyuiopå|asdfghjklöä|zxcvbnm");
+            Reps.print(apw);
             apw.println();
             Pfx.getPrefixes().forEach((p)->p.print(apw));
             apw.println();
@@ -125,6 +128,28 @@ public abstract class Dictionary extends AbstractParser
                 }
                 Sana suf = word.substring(len);
                 sfxMap.add(suf, pfx);
+            }
+        });
+        suffixes.forEach((s, we)->
+        {
+            Sana sfx = we.getWord();
+            String rev = reverse(sfx.toString());
+            int len = sfx.length();
+            SortedMap<String, WordEntry> tailMap = reverseMap.tailMap(rev);
+            for (Entry<String, WordEntry> e : tailMap.entrySet())
+            {
+                String key = e.getKey();
+                if (!key.startsWith(rev))
+                {
+                    break;
+                }
+                WordEntry entry = e.getValue();
+                Sana word = entry.getWord();
+                if (word.endsWith(sfx))
+                {
+                    Sana pref = word.substring(0, word.length()-len);
+                    sfxMap.add(sfx, pref);
+                }
             }
         });
         for (Entry<Sana,Set<Sana>> e : sfxMap.entrySet())
@@ -166,8 +191,17 @@ public abstract class Dictionary extends AbstractParser
                         System.err.println("remove "+w);
                     }
                     Pfx pfx = Pfx.getInstance(set);
-                    newWord.setPfx(pfx);
-                    map.put(base, newWord);
+                    WordEntry se = suffixes.get(base);
+                    if (se == null)
+                    {
+                        newWord.setPfx(pfx);
+                        map.put(base, newWord);
+                    }
+                    else
+                    {
+                        se.setPfx(pfx);
+                        map.put(base, se);
+                    }
                 }
             }
         }
@@ -199,7 +233,8 @@ public abstract class Dictionary extends AbstractParser
         {
             if (word.startsWith("-"))
             {
-                suffixes.add(word.substring(1));
+                Sana s = word.substring(1);
+                suffixes.put(s, new WordEntry(s, homonym, classes, inflections));
             }
             else
             {
@@ -332,7 +367,7 @@ public abstract class Dictionary extends AbstractParser
     @Terminal(expression = "[\r\n]+")
     protected abstract void lf();
 
-    @ParseMethod(start = "dictionary", size = 1024, charSet = "UTF-8", features={WideIndex, UseDirectBuffer})
+    @ParseMethod(start = "dictionary", size = 4096, charSet = "UTF-8", features={WideIndex, UseDirectBuffer})
     protected abstract <I> void parse(I input);
     
     public static Dictionary newInstance()

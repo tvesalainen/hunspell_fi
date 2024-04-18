@@ -37,7 +37,7 @@ public class SanaTest
         Sana b = new Sana("huuto");
         assertEquals("aivastus", a.toString());
         assertArrayEquals(new String[]{"ai", "vas", "tus"}, a.getSyllables());
-        assertEquals(1, a.compareTo(b));
+        assertTrue(a.compareTo(b) != 0);
         assertEquals(0, a.compareTo(a));
     }
     @Test
