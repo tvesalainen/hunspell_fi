@@ -25,7 +25,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -298,7 +297,7 @@ public abstract class Dictionary extends AbstractParser
     {
         return Sfx.getInstance(inflection, grade);
     }
-    @Terminal(expression = "[^\t]+")
+    @Terminal(expression = "[^\t\r\n]+")
     protected Sana word(String str)
     {
         Sana sana = new Sana(str.toLowerCase());

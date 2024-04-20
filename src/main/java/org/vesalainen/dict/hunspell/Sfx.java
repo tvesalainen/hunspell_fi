@@ -33,6 +33,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static org.vesalainen.dict.hunspell.Sijamuoto.INFINITIIVI;
 import org.vesalainen.util.HashMapList;
 import org.vesalainen.util.MapList;
 
@@ -145,7 +146,7 @@ public class  Sfx implements Comparable<Sfx>
             }
             if (!hadIt)
             {
-                throw new RuntimeException(nom+" didn't have inflection "+this);
+                //throw new RuntimeException(nom+" didn't have inflection "+this);
             }
         }
         pw.format("SFX %c Y %d\n", flag, set.size());
@@ -280,6 +281,7 @@ public class  Sfx implements Comparable<Sfx>
             String line = br.readLine();
             String sana = "";
             String ehto = null;
+            int verbiRaja = INFINITIIVI.ordinal();
             while (line != null)
             {
                 if (Character.isDigit(line.charAt(0)))
@@ -289,20 +291,20 @@ public class  Sfx implements Comparable<Sfx>
                     {
                         nomini = false;
                     }
-                    sijaIndex = nomini ? 0 : 8;
+                    sijaIndex = nomini ? 0 : verbiRaja;
                 }
                 else
                 {
                     if (line.charAt(0) == '-')
                     {
-                        sijaIndex = nomini ? 0 : 8;
+                        sijaIndex = nomini ? 0 : verbiRaja;
                     }
                     else
                     {
-                        switch (sijaIndex)
+                        switch (Sijamuoto.values()[sijaIndex])
                         {
-                            case 0:
-                            case 8:
+                            case YKS_NOMINATIIVI:
+                            case INFINITIIVI:
                                 line = line.replace(".", "");
                                 int idx = line.indexOf('|');
                                 if (idx != -1)

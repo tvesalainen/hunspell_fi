@@ -7,6 +7,17 @@ valot
 valoje.n.
 valoj.a.
 valoi.hin.
+valoni
+valomme
+valosi
+valonne
+valonsa
+valossa
+valolla
+valosta
+valolta
+valoon
+valolle
 - - - - -
 sol|u.
 solu.n.
@@ -16,6 +27,17 @@ solut
 soluje.n.
 soluj.a.
 solui.hin.
+soluni
+solumme
+solusi
+solunne
+solunsa
+solussa
+solulla
+solusta
+solulle
+soluun
+solulle
 -
 pärsk|y
 pärskyn
@@ -25,6 +47,17 @@ pärskyt
 pärskyjen
 pärskyjä
 pärskyihin
+pärskyni
+pärskymme
+pärskysi
+pärskynne
+pärskynsä
+pärskyssä
+pärskyllä
+pärskystä
+pärskyltä
+pärskyyn
+pärskylle
 -
 esineist|ö
 esineistön
@@ -34,6 +67,17 @@ esineistöt
 esineistöjen
 esineistöjä
 esineistöihin
+esineistöni
+esineistömme
+esineistösi
+esineistönne
+esineistönsä
+esineistössä
+esineistöllä
+esineistöstä
+esineistöltä
+esineistöön
+esineistölle
 -
 temp|e
 tempen
@@ -43,6 +87,11 @@ tempet
 tempejen / tempein
 tempejä
 tempeihin
+tempeni
+tempemme
+tempesi
+tempenne
+tempensä
 2
 palvelu.
 palvelu.n.
@@ -52,6 +101,17 @@ palvelut
 palveluje.n. / palveluide.n. / palveluitte.n.
 palvelui.ta. / palveluj.a.
 palvelui.hin.
+palveluni
+palvelumme
+palvelusi
+palvelunne
+palvelunsa
+palvelussa
+palvelulla
+palvelusta
+palvelulta
+palveluun
+palvelulle
 3
 valtio.
 valtio.n.
@@ -61,6 +121,17 @@ valtiot
 valtioide.n. / valtioitte.n.
 valtioi.ta.
 valtioi.hin.
+valtioni
+valtiomme
+valtiosi
+valtionne
+valtionsa
+valtiossa
+valtiolla
+valtiosta
+valtiolta
+valtioon
+valtiolle
 4
 laatikko.
 laatiko.n.
@@ -70,6 +141,17 @@ laatikot
 laatikkoje.n. / laatikoide.n. / laatikoitte.n.
 laatikkoj.a. / laatikoi.ta.
 laatikkoi.hin. / laatikoi.hin.
+laatikkoni
+laatikkomme
+laatikkosi
+laatikkonne
+laatikkonsa
+laatikossa
+laatikolla
+laatikosta
+laatikolta
+laatikkoon
+laatikolle
 5
 aas|i
 aasin
@@ -79,6 +161,17 @@ aasit
 aasien
 aaseja
 aaseihin
+aasini
+aasimme
+aasisi
+aasinne
+aasinsa
+aasissa
+aasilla
+aasista
+aasilta
+aasiin
+aasille
 --------
 ris|ti.
 risti.n.
@@ -88,6 +181,17 @@ ristit
 ristie.n.
 ristej.ä.
 ristei.hin.
+ristini
+ristimme
+ristisi
+ristinne
+ristinsä
+ristissä
+ristillä
+rististä
+ristiltä
+ristiin
+ristille
 -
 feminii|ni
 feminiinin
@@ -232,6 +336,17 @@ paperit
 papereide.n. / papereitte.n. / paperie.n.
 paperei.ta. / paperej.a.
 paperei.hin.
+paperini
+paperimme
+paperisi
+paperinne
+paperinsa
+paperissa
+paperilla
+paperista
+paperilta
+paperiin
+paperille
 - - - - -
 banaani.
 banaani.n.
@@ -250,6 +365,17 @@ ovet
 ovie.n.
 ovi.a.
 ovi.in.
+oveni
+ovemme
+ovesi
+ovenne
+ovensa
+ovessa
+ovella
+ovesta
+ovelta
+oveen
+ovelle
 8
 nalle.
 nalle.n.
@@ -259,6 +385,17 @@ nallet
 nalleje.n. / (nallei.n.)
 nallej.a.
 nallei.hin.
+nalleni
+nallemme
+nallesi
+nallenne
+nallensa
+nallessa
+nallella
+nallesta
+nallelta
+nalleen
+nallelle
 9
 kala.
 kala.n.
@@ -268,6 +405,17 @@ kalat
 kaloje.n. / (kalai.n.)
 kaloj.a.
 kaloi.hin.
+kalani
+kalamme
+kalasi
+kalanne
+kalansa
+kalassa
+kalalla
+kalasta
+kalalta
+kalaan
+kalalle
 10
 koir|a.
 koira.n.
@@ -277,8 +425,19 @@ koirat
 koirie.n. / (koirai.n.)
 koiri.a.
 koiri.in.
+koirani
+koiramme
+koirasi
+koiranne
+koiransa
+koirassa
+koiralla
+koirasta
+koiralta
+koiraan
+koiralle
 ---
-metsä
+mets|ä
 metsän
 metsää
 metsään
@@ -286,6 +445,17 @@ metsät
 metsien / metsäin
 metsiä
 metsiin
+metsäni
+metsämme
+metsäsi
+metsänne
+metsänsä
+metsässä
+metsälle
+metsästä
+metsältä
+metsään
+metsälle
 11
 omena.
 omena.n.
@@ -295,6 +465,17 @@ omenat
 omenie.n. / omenoide.n. / omenoitte.n. / (omenoje.n.) / (omenai.n.)
 omeni.a. / omenoi.ta. / (omenoj.a.)
 omeni.in. / omenoi.hin.
+omenani
+omenamme
+omenasi
+omenanne
+omenansa
+omenassa
+omenalla
+omenasta
+omenalta
+omenaan
+omenalle
 12
 kulkija.
 kulkija.n.
@@ -304,6 +485,17 @@ kulkijat
 kulkijoide.n. / kulkijoitte.n. / (kulkijai.n.)
 kulkijoi.ta.
 kulkijoi.hin.
+kulkijani
+kulkijamme
+kulkijasi
+kulkijanne
+kulkijansa
+kulkijassa
+kulkijalla
+kulkijasta
+kulkijalta
+kulkijaan
+kulkijalle
 13
 katiska.
 katiska.n.
@@ -313,6 +505,17 @@ katiskat
 katiskoide.n. / katiskoitte.n. / katiskoje.n. / (katiskai.n.)
 katiskoi.ta. / katiskoj.a.
 katiskoi.hin.
+katiskani
+katiskamme
+katiskasi
+katiskanne
+katiskansa
+katiskassa
+katiskalla
+katiskasta
+katiskalta
+katiskaan
+katiskalle
 14
 solakka.
 solaka.n.
@@ -322,6 +525,17 @@ solakat
 solakoide.n. / solakoitte.n. / solakkoje.n. / (solakkai.n.)
 solakoi.ta. / solakkoj.a.
 solakkoi.hin. / solakoi.hin.
+solakkani
+solakamme
+solakkasi
+solakanne
+solakkansa
+solakassa
+solakalla
+solkkasta
+solakalta
+solakkaan
+solakalle
 15
 korkea.
 korkea.n.
@@ -331,6 +545,17 @@ korkeat
 korkeide.n. / korkeitte.n. / (korkeai.n.)
 korkei.ta.
 korkei.siin. / korkei.hin.
+korkeani
+korkeamme
+korkeasi
+korkeanne
+korkeansa
+korkeassa
+korkealta
+korkeasta
+korkealta
+korkeaan
+korkealle
 16
 vanhempi.
 vanhemma.n.
@@ -340,6 +565,17 @@ vanhemmat
 vanhempie.n. / (vanhempai.n.)
 vanhempi.a.
 vanhempi.in.
+vanhempani
+vanhempamme
+vanhempasi
+vanhempanne
+vanhempansa
+vanhemmassa
+vanhemmalla
+vanhemmasta
+vanhemmalta
+vanhempaan
+vanhemmalle
 17
 vapaa.
 vapaa.n.
@@ -349,6 +585,17 @@ vapaat
 vapaide.n. / vapaitte.n.
 vapai.ta.
 vapai.siin. / (vapai.hin.)
+vapaani
+vapaamme
+vapaasi
+vapaanne
+vapaansa
+vapaassa
+vapaalla
+vapaasta
+vapaalta
+vapaaseen
+vapaalle
 18
 maa.
 maa.n.
@@ -358,6 +605,17 @@ maat
 maide.n. / maitte.n.
 mai.ta.
 mai.hin.
+maani
+maamme
+maasi
+maanne
+maansa
+maassa
+maalla
+maasta
+maalta
+maahan
+maalle
 19
 suo.
 suo.n.
@@ -367,6 +625,17 @@ suot
 soide.n. / soitte.n.
 soi.ta.
 soi.hin.
+suoni
+suomme
+suosi
+suonne
+suonsa
+suossa
+suolla
+suosta
+suolta
+suohon
+suolle
 20
 filee.
 filee.n.
@@ -375,7 +644,18 @@ filee.hen. / filee.seen.
 fileet
 fileide.n. / fileitte.n.
 filei.tä.
-filei.hin. / filei.siin.
+filei.hin. / filei.siin.'
+fileeni
+fileemme
+fileesi
+fileenne
+fileensä
+fileessä
+fileellä
+fileestä
+fileeltä
+fileeseen
+fileelle
 21
 rosé.
 rosé.n.
@@ -385,6 +665,17 @@ rosét
 roséide.n.
 roséi.ta.
 roséi.hin.
+roséni
+rosémme
+rosési
+rosénne
+rosénsa
+roséssa
+rosélla
+rosésta
+rosélta
+roséseen
+rosélle
 22
 parfait.
 parfait'.n. / parfeen
@@ -403,6 +694,17 @@ tiilet
 tiilie.n.
 tiili.ä.
 tiili.in.
+tiilini
+tiilimme
+tiilisi
+tiilinne
+tiilinsä
+tiilessä
+tiilellä
+tiilestä
+tiileltä
+tiileen
+tiilelle
 24
 uni.
 une.n.
@@ -412,6 +714,17 @@ unet
 unie.n. / unte.n.
 uni.a.
 uni.in.
+uneni
+unemme
+unesi
+unenne
+unensa
+unessa
+unella
+unesta
+unelta
+uneen
+unelle
 25
 toimi.
 toime.n.
@@ -421,6 +734,17 @@ toimet
 toimie.n. / tointe.n.
 toimi.a.
 toimi.in.
+toimeni
+toimemme
+toimesi
+toimenne
+toimensa
+toimessa
+toimella
+toimesta
+toimelta
+toimeen
+toimelle
 26
 pieni.
 piene.n.
@@ -430,6 +754,17 @@ pienet
 piente.n. / pienie.n.
 pieni.ä.
 pieni.in.
+pieneni
+pienemme
+pienesi
+pienenne
+pienensä
+pienessä
+pienellä
+pienestä
+pieneltä
+pieneen
+pienelle
 27
 vu|osi
 vuoden
@@ -439,6 +774,17 @@ vuodet
 vuosien / vuotten
 vuosia
 vuosiin
+vuoteni
+vuotemme
+vuotesi
+vuotenne
+vuotensa
+vuodessa
+vuodella
+vuodesta
+vuodelta
+vuoteen
+vuodelle
 --------
 k|äsi.
 käde.n.
@@ -448,6 +794,17 @@ kädet
 käsie.n. / (kätte.n.)
 käsi.ä.
 käsi.in.
+käteni
+kätemme
+kätesi
+kätenne
+kätensä
+kädessä
+kädellä
+kädestä
+kädeltä
+käteen
+kädelle
 -
 u|usi
 uuden
@@ -457,6 +814,17 @@ uudet
 uusien / uutten
 uusia
 uusiin
+uuteni
+uutemme
+uutesi
+uutenne
+uutensa
+uudessa
+uudella
+uudesta
+uudelta
+uuteen
+uudelle
 -
 s|ysi
 syden
@@ -466,6 +834,17 @@ sydet
 sysien / sytten
 sysiä
 sysiin
+syteni
+sytemme
+sytesi
+sytenne
+sytensä
+sydessä
+sydellä
+sydestä
+sydeltä
+syteen
+sydelle
 -
 he|isi
 heiden
@@ -475,6 +854,17 @@ heidet
 heisien / heitten
 heisiä
 heisiin
+heiteni
+heitemme
+heitesi
+heitenne
+heitensä
+heidessä
+heidellä
+heidestä
+heideltä
+heiteen
+heidelle
 -
 orvask|esi
 orvaskeden
@@ -484,6 +874,17 @@ orvaskedet
 orvaskesien / orvasketten
 orvaskesiä
 orvaskesiin
+orvasketeni
+orvasketemme
+orvasketesi
+orvasketenne
+orvasketensä
+orvaskedessä
+orvaskedellä
+orvaskedestä
+orvaskedeltä
+orvasketeen
+orvaskedelle
 -
 pa|asi
 paaden
@@ -493,6 +894,17 @@ paadet
 paasien / paatten
 paasia
 paasiin
+paateni
+paatemme
+paatesi
+paatenne
+paatensa
+paadessa
+paadella
+paadesta
+paadelta
+paateen
+paadelle
 28
 kynsi.
 kynne.n.
@@ -502,6 +914,17 @@ kynnet
 kynsie.n. / (kyntte.n.)
 kynsi.ä.
 kynsi.in.
+kynteni
+kyntemme
+kyntesi
+kyntenne
+kyntensä
+kynnessä
+kynneltä
+kynnestä
+kynneltä
+kynteen
+kynnelle
 29
 lapsi.
 lapse.n.
@@ -511,6 +934,17 @@ lapset
 laste.n. / lapsie.n.
 lapsi.a.
 lapsi.in.
+lapseni
+lapsemme
+lapsesi
+lapsenne
+lapsensa
+lapsessa
+lapsella
+lapsesta
+lapselta
+lapseen
+lapselle
 30
 veitsi.
 veitse.n.
@@ -520,6 +954,17 @@ veitset
 veitsie.n. / (veiste.n.)
 veitsi.ä.
 veitsi.in.
+veitseni
+veitsemme
+veitsesi
+veitsenne
+veitsensä
+veitsessä
+veitsellä
+veitsestä
+veitseltä
+veitseen
+veitselle
 31
 kaksi.
 kahde.n.
@@ -529,6 +974,17 @@ kahdet
 kaksie.n.
 kaksi.a.
 kaksi.in.
+kahteni
+kahtemme
+kahtesi
+kahtenne
+kahtensa
+kahdessa
+kahdella
+kahdesta
+kahdelta
+kahteen
+kahdelle
 32
 sisar.
 sisare.n.
@@ -538,6 +994,17 @@ sisaret
 sisarie.n. / sisarte.n.
 sisari.a.
 sisari.in.
+sisareni
+sisaremme
+sisaresi
+sisarenne
+sisarensa
+sisaressa
+sisarella
+sisaresta
+sisarelta
+sisareen
+sisarelle
 33
 kytkin.
 kytkime.n.
@@ -547,6 +1014,17 @@ kytkimet
 kytkimie.n. / kytkinte.n.
 kytkimi.ä.
 kytkimi.in.
+kytkimeni
+kytkimemme
+kytkimesi
+kytkimenne
+kytkimensä
+kytkimessä
+kytkimeltä
+kytkimestä
+kytkimeltä
+kytkimeen
+kytkimelle
 34
 onneton.
 onnettoma.n.
@@ -556,6 +1034,17 @@ onnettomat
 onnettomie.n. / (onnetonte.n.)
 onnettomi.a.
 onnettomi.in.
+onnettomani
+onnettomamme
+onnettomasi
+onnettomanne
+onnettomansa
+onnettomassa
+onnettomalla
+onnettomasta
+onnettomalta
+onnettomaan
+onnettomalle
 35
 lämmin.
 lämpimä.n.
@@ -565,6 +1054,17 @@ lämpimät
 lämpimie.n. / (lämpimäi.n.)
 lämpimi.ä.
 lämpimi.in.
+lämpimäni
+lämpimämme
+lämpimäsi
+lämpimänne
+lämpimänsä
+lämpimässä
+lämpimällä
+lämpimästä
+lämpimältä
+lämpimään
+lämpimälle
 36
 sisin.
 sisimmä.n.
@@ -574,6 +1074,17 @@ sisimmät
 sisimpie.n. / sisinte.n. / (sisimpäi.n.)
 sisimpi.ä.
 sisimpi.in.
+sisimpäni
+sisimpämme
+sisimpäsi
+sisimpänne
+sisimpänsä
+sisimmässä
+sisimmällä
+sisimmästä
+sisimmältä
+sisimpään
+sisimmälle
 37
 vasen.
 vasemma.n.
@@ -583,6 +1094,17 @@ vasemmat
 vasempie.n. / vasente.n. / (vasempai.n.)
 vasempi.a.
 vasempi.in.
+vasempani
+vasempamme
+vasempasi
+vasempanne
+vasempansa
+vasemmassa
+vasemmalla
+vasemmasta
+vasemmalta
+vasempaan
+vasemmalle
 38
 nainen.
 naise.n.
@@ -592,6 +1114,17 @@ naiset
 naiste.n. / naisie.n.
 naisi.a.
 naisi.in.
+naiseni
+naisemme
+naisesi
+naisenne
+naisensa
+naisessa
+naisella
+naisesta
+naiselta
+naiseen
+naiselle
 39
 vastaus.
 vastaukse.n.
@@ -601,6 +1134,37 @@ vastaukset
 vastauste.n. / vastauksie.n.
 vastauksi.a.
 vastauksi.in.
+vastaukseni
+vastauksemme
+vastauksesi
+vastauksenne
+vastauksempansa
+vastauksessa
+vastauksella
+vastauksesta
+vastaukselta
+vastaukseen
+vastaukselle
+---
+silmäys
+silmäyksen
+silmäystä
+silmäykseen
+silmäykset
+silmäysten / silmäyksien
+silmäyksiä
+silmäyksiin
+silmäykseni
+silmäyksemme
+silmäyksesi
+silmäyksenne
+silmäyksensä
+silmäyksessä
+silmäyksellä
+silmäyksestä
+silmäykseltä
+silmäykseen
+silmäykselle
 40
 kalleus.
 kalleude.n.
@@ -610,6 +1174,17 @@ kalleudet
 kalleuksie.n.
 kalleuksi.a.
 kalleuksi.in.
+kalleuteni
+kalleutemme
+kalleutesi
+kalleutenne
+kalleutensa
+kalleudessa
+kalleudella
+kalleudesta
+kalleudelta
+kalleuteen
+kalleudelle
 41
 vieras.
 vieraa.n.
@@ -619,6 +1194,17 @@ vieraat
 vieraide.n. / vieraitte.n.
 vierai.ta.
 vierai.siin. / (vierai.hin.)
+vieraani
+vieraamme
+vieraasi
+vieraanne
+vieraansa
+vieraassa
+vieraalla
+vieraasta
+vieraalta
+vieraaseen
+vieraalle
 42
 mies.
 miehe.n.
@@ -628,6 +1214,17 @@ miehet
 mieste.n. / miehie.n.
 miehi.ä.
 miehi.in.
+mieheni
+miehemme
+miehesi
+miehenne
+miehensä
+miehessä
+mieheltä
+miehestä
+mieheltä
+mieheen
+miehelle
 43
 ohut.
 ohue.n.
@@ -637,6 +1234,17 @@ ohuet
 ohuide.n. / ohuitte.n.
 ohui.ta.
 ohui.siin. / ohui.hin.
+ohueni
+ohuemme
+ohuesi
+ohuenne
+ohuensa
+ohuessa
+ohuella
+ohuesta
+ohuelta
+ohueen
+ohuelle
 44
 kevät.
 kevää.n.
@@ -646,6 +1254,17 @@ keväät
 keväide.n. / keväitte.n.
 keväi.tä.
 keväi.siin. / (keväi.hin.)
+kevääni
+keväämme
+kevääsi
+keväänne
+keväänsä
+keväässä
+keväällä
+keväästä
+keväältä
+kevääseen
+keväälle
 45
 kahdeksas.
 kahdeksanne.n.
@@ -655,6 +1274,17 @@ kahdeksannet
 kahdeksansie.n.
 kahdeksansi.a.
 kahdeksansi.in.
+kahdeksanteni
+kahdeksantemme
+kahdeksantesi
+kahdeksantenne
+kahdeksantensa
+kahdeksannessa
+kahdeksannella
+kahdeksannesta
+kahdeksannelta
+kahdeksanteen
+kahdeksannelle
 46
 tuhat.
 tuhanne.n.
@@ -664,6 +1294,17 @@ tuhannet
 tuhansie.n. / (tuhante.n.)
 tuhansi.a.
 tuhansi.in.
+tuhanteni
+tuhantemme
+tuhantesi
+tuhantenne
+tuhantensa
+tuhannessa
+tuhannella
+tuhannesta
+tuhannelta
+tuhanteen
+tuhannelle
 47
 kuollut.
 kuollee.n.
@@ -673,6 +1314,17 @@ kuolleet
 kuolleide.n. / kuolleitte.n.
 kuollei.ta.
 kuollei.siin. /kuollei.hin.
+kuolleeni
+kuolleemme
+kuolleesi
+kuolleenne
+kuolleensa
+kuolleessa
+kuolleella
+kuolleesta
+kuolleelta
+kuolleeseen
+kuolleelle
 48
 hame
 hamee.n.
@@ -682,6 +1334,17 @@ hameet
 hameide.n. / hameitte.n.
 hamei.ta.
 hamei.siin. / hamei.hin.
+hameeni
+hameemme
+hameesi
+hameenne
+hameensa
+hameessa
+hameella
+hameesta
+hameelta
+hameeseen
+hameelle
 ---
 yhtye
 yhtyeen
@@ -691,6 +1354,17 @@ yhtyeet
 yhtyeiden / yhtyeitten
 yhtyeitä
 yhtyeisiin / yhtyeihin
+yhtyeeni
+yhtyeemme
+yhtyeesi
+yhtyeenne
+yhtyeensä
+yhtyeessä
+yhtyeellä
+yhtyeestä
+yhtyeeltä
+yhtyeeseen
+yhtyeelle
 49
 askel.
 askele.n.
@@ -700,6 +1374,17 @@ askeleet
 askelie.n. / askelte.n.
 askeli.a.
 askeli.in.
+askeleni
+askelemme
+askelesi
+askelenne
+askelensa
+askelessa
+askelella
+askelesta
+askelelta
+askeleeseen
+askelelle
 - - - - -
 askele.
 askelee.n.
@@ -709,6 +1394,17 @@ askeleet
 askeleitte.n. / askeleide.n.
 askeleit.a.
 askelei.siin. / askelei.hin.
+askeleeni
+askeleemme
+askeleesi
+askeleenne
+askeleensa
+askelessa
+askelella
+askelesta
+askelelta
+askeleeseen
+askelelle
 50
 isoäiti.
 isoäidi.n.
@@ -718,6 +1414,17 @@ isoäidit
 isoäitie.n.
 isoäitej.ä.
 isoäitei.hin.
+isoäitini
+isoäitimme
+isoäitisi
+isoäitinne
+isoäitinsä
+isoäidissä
+isoäidillä
+isoäidistä
+isoäidiltä
+isoäitiin
+isoäidille
 51
 nuori.pari.
 nuore.n.pari.n.
@@ -727,6 +1434,11 @@ nuoretparit
 nuorte.n.parie.n.
 nuori.a.parej.a.
 nuori.in.parei.hin.
+nuoriparini
+nuoriparimme
+nuoriparisi
+nuoriparinne
+nuoriparinsa
 52
 sano|a.
 sano.n.
