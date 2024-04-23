@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2024 Timo Vesalainen <timo.vesalainen@iki.fi>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<xsd:schema version="1.0"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://vesalainen.org/schema/sijat"
+        xmlns="http://vesalainen.org/schema/sijat"
+        elementFormDefault="qualified">
+    <xsd:element name="sijat">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="sija" type="sijaType" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="sijaType">
+        <xsd:sequence>
+            <xsd:element name="esimerkki" type="esimerkkiType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="tyyppi" type="xsd:string"/>
+        <xsd:attribute name="numero" type="xsd:unsignedShort"/>
+    </xsd:complexType>
+    <xsd:complexType name="esimerkkiType">
+        <xsd:sequence>
+            <xsd:element name="taivutus" type="taivutusTyyppiType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="perus" type="xsd:string"/>
+        <xsd:attribute name="ehto" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="taivutusTyyppiType">
+        <xsd:attribute name="sija" type="xsd:string"/>
+        <xsd:attribute name="esim" type="xsd:string"/>
+    </xsd:complexType>
+</xsd:schema>

@@ -44,7 +44,7 @@ import org.vesalainen.util.MapList;
 public class  Sfx implements Comparable<Sfx>
 {
     private static final Map<String,Sfx> map = new TreeMap<>();
-    private static final MapList<Integer,TaivutusTyyppi> taivutusTyyppi = new HashMapList<>();
+    private static final MapList<Integer,TaivutusTyyppi> taivutusTyyppi = SijatFile.lataaTaivutukset();
     private static char flagSeq=' '+1;
     private int inflection;
     private char grade;
@@ -54,7 +54,7 @@ public class  Sfx implements Comparable<Sfx>
 
     static
     {
-        loadTaivutusTyypit();
+        //loadTaivutusTyypit();
     }
     public static Sfx getInstance(int inflection, char grade)
     {
@@ -152,12 +152,12 @@ public class  Sfx implements Comparable<Sfx>
         pw.format("SFX %c Y %d\n", flag, set.size());
         set.forEach((s)->pw.println(s));
     }
-    private static String suffix(String nom, String taiv)
+    static String suffix(String nom, String taiv)
     {
         String com = comPrf(nom, taiv);
         return taiv.substring(com.length());
     }
-    private static String diff(String nom, String taiv)
+    static String diff(String nom, String taiv)
     {
         if (taiv.startsWith(nom))
         {
@@ -170,7 +170,7 @@ public class  Sfx implements Comparable<Sfx>
         }
         
     }
-    private static String comPrf(String nom, String taiv)
+    static String comPrf(String nom, String taiv)
     {
         StringBuilder sb = new StringBuilder();
         int len = min(nom.length(), taiv.length());
@@ -428,90 +428,6 @@ public class  Sfx implements Comparable<Sfx>
             return toString().compareTo(o.toString());
         }
 
-        
-    }
-    private static class TaivutusTyyppi
-    {
-        private Sijamuoto sija;
-        private String strip;
-        private String prefix;
-        private String ehto;
-
-        public TaivutusTyyppi(Sijamuoto sija, String strip, String prefix, String ehto)
-        {
-            this.sija = sija;
-            this.strip = strip;
-            this.prefix = prefix;
-            this.ehto = ehto;
-        }
-
-        public String taivuta(String sana)
-        {
-            if (strip != null)
-            {
-                if (sana.length() < strip.length())
-                {
-                    throw new IllegalArgumentException(sana);
-                }
-                return sana.substring(0, sana.length()-strip.length())+prefix;
-            }
-            else
-            {
-                return sana+prefix;
-            }
-        }
-            
-        @Override
-        public String toString()
-        {
-            return "sija=" + sija + ", taivutus=" + prefix + '}';
-        }
-
-        @Override
-        public int hashCode()
-        {
-            int hash = 7;
-            hash = 59 * hash + Objects.hashCode(this.sija);
-            hash = 59 * hash + Objects.hashCode(this.strip);
-            hash = 59 * hash + Objects.hashCode(this.prefix);
-            hash = 59 * hash + Objects.hashCode(this.ehto);
-            return hash;
-        }
-
-        @Override
-        public boolean equals(Object obj)
-        {
-            if (this == obj)
-            {
-                return true;
-            }
-            if (obj == null)
-            {
-                return false;
-            }
-            if (getClass() != obj.getClass())
-            {
-                return false;
-            }
-            final TaivutusTyyppi other = (TaivutusTyyppi) obj;
-            if (!Objects.equals(this.strip, other.strip))
-            {
-                return false;
-            }
-            if (!Objects.equals(this.prefix, other.prefix))
-            {
-                return false;
-            }
-            if (!Objects.equals(this.ehto, other.ehto))
-            {
-                return false;
-            }
-            if (this.sija != other.sija)
-            {
-                return false;
-            }
-            return true;
-        }
         
     }
 }
